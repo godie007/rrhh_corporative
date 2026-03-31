@@ -4,7 +4,25 @@ Skill para **Claude Code**: a partir de un CV en PDF genera **dos versiones Word
 
 ## Arquitectura
 
-![Arquitectura del flujo del skill](arquitectura.png)
+```mermaid
+flowchart TB
+  PREP["prepare_output.sh"]
+  PDF["CV en PDF"]
+  EXT["extract_pdf_text.py"]
+  TXT["extracted.txt"]
+  AI1["Claude: 2 JSON + hr_analysis<br/>corporate + executive"]
+  BLD["build_docx.py"]
+  DOCX["dos .docx en output/"]
+  AI2["Claude: rúbrica RR.HH.<br/>elección de versión"]
+  TOPDF["docx_to_pdf.py"]
+  FINAL["perfil_rrhh_final.pdf"]
+
+  PREP --> EXT
+  PDF --> EXT
+  EXT --> TXT --> AI1 --> BLD --> DOCX --> AI2 --> TOPDF --> FINAL
+```
+
+Los bloques **Claude** son razonamiento del asistente según `SKILL.md`; el resto son scripts Python en `.claude/skills/perfil-rrhh-pdf-word-pdf/scripts/`.
 
 ## Requisitos
 
