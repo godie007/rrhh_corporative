@@ -2,6 +2,10 @@
 
 Skill para **Claude Code**: a partir de un CV en PDF genera **dos versiones Word** (enfoque corporativo / enfoque logros y negocio), las **evalúa con una rúbrica RR.HH.** y exporta la elegida a **PDF**. La salida va a `output/` en la raíz del repositorio.
 
+## Arquitectura
+
+![Arquitectura del flujo del skill](arquitectura.png)
+
 ## Requisitos
 
 - [Claude Code](https://claude.ai/code) con este proyecto abierto como workspace.
