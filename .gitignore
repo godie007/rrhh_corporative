@@ -1,0 +1,12 @@
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+.DS_Store
+
+# Config local de Claude Code (permisos/rutas de esta máquina)
+.claude/settings.local.json
+
+# Salidas del skill perfil-rrhh (se regeneran; conservar solo .gitkeep)
+output/*
+!output/.gitkeep
